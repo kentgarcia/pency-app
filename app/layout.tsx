@@ -1,3 +1,4 @@
+import { Toaster } from "sonner";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -21,8 +22,8 @@ export const metadata: Metadata = {
         url: "/logo-dark.svg",
         href: "/logo-dark.svg",
       },
-    ]
-  }
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -34,17 +35,18 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ConvexClientProvider>
-        <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-        storageKey="pency-theme-2">
-          {children}
-        </ThemeProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+            storageKey="pency-theme-2"
+          >
+            <Toaster position="bottom-center" />
+            {children}
+          </ThemeProvider>
         </ConvexClientProvider>
-
-        </body>
+      </body>
     </html>
   );
 }
