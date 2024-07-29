@@ -23,9 +23,9 @@ export const Banner = ({ documentId }: BannerProps) => {
     const promise = remove({ id: documentId });
 
     toast.promise(promise, {
-      loading: "Deleting document...",
-      success: "Document deleted!",
-      error: "Failed to delete document.",
+      loading: "Deleting a note...",
+      success: "Note deleted!",
+      error: "Failed to delete note.",
     });
 
     router.push("/documents");
@@ -35,9 +35,9 @@ export const Banner = ({ documentId }: BannerProps) => {
     const promise = restore({ id: documentId });
 
     toast.promise(promise, {
-      loading: "Restoring document...",
-      success: "Document restored!",
-      error: "Failed to restore document.",
+      loading: "Restoring note...",
+      success: "Note restored!",
+      error: "Failed to restore note.",
     });
   };
 

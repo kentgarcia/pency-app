@@ -31,9 +31,9 @@ export const Menu = ({ documentId }: MenuProps) => {
     const promise = archive({ id: documentId });
 
     toast.promise(promise, {
-      loading: "Archiving...",
-      success: "Archived",
-      error: "Failed to archive",
+      loading: "Archiving a note...",
+      success: "Note rchived!",
+      error: "Failed to archive note.",
     });
 
     router.push("/documents");
